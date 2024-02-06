@@ -1,0 +1,110 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    
+}
+body
+{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background: linear-gradient(to right,slategrey 50%,rgb(167, 97, 23) 50%); */
+    background-size:300% 300% ;
+    animation:color 20s ease-in-out infinite ;
+}
+@keyframes color{
+    0%
+    {
+        background: linear-gradient(45deg,slategrey 50%,black 50%); 
+      background-position:0% 50% ;
+      
+    }
+    25%
+    {
+        background: linear-gradient(90deg,black 50%,slategrey 50%);
+      background-position:100% 50% ;
+     
+    }
+    50%
+    {
+        background: linear-gradient(135deg,slategrey 50%,black 50%);
+      background-position:0% 50% ; 
+    }
+    75%{
+        background: linear-gradient( 90deg,slategrey 50%,black 50%);
+        background-position: 100% 50%;
+    }
+    85%
+    {
+        background: linear-gradient(to top,slategrey 50%,black 50%);
+      background-position:0% 50% ; 
+    }
+    100%{
+        background: linear-gradient(135deg ,black 50%,slategrey 50%);
+        background-position: 0% 50%;
+    }
+
+}
+
+
+.container
+{
+   position: relative;
+}
+
+.wallclock{
+   height:400px;
+   width: 400px;
+   border-radius: 50%;
+   background: rgb(5, 2, 2);
+   box-shadow:  5px 5px 10px #060403,
+             -5px -5px 10px slategrey;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wallclock span{
+    position: absolute;
+    transform: rotate(calc(30deg * var(--i)));
+    inset: 12px;
+    text-align: center;
+}
+.wallclock span b{
+    transform: rotate(calc(-30deg*var(--i)));
+    display: inline-block;
+    font-size: 15px;
+}
+
+.wallclock::before{
+    content: " ";
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: #fff;
+    z-index: 2;
+}
+.hand
+{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.hand i{
+    position: absolute;
+    background-color: var(--clr);
+    height: var(--h);
+    width: 5px;
+    /* background-color: #fff; */
+    border-radius: 8px;
+
+}
